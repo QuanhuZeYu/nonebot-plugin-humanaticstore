@@ -11,15 +11,13 @@ jobs:
     name: Upload release to PyPI using Poetry
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2 # 更新为最新版的 actions/checkout
+    - uses: actions/checkout@v2
     - name: Set up Python
-      uses: actions/setup-python@v2 # 更新为最新版的 actions/setup-python
+      uses: actions/setup-python@v2
       with:
         python-version: '3.x'
     - name: Install Poetry
-      run: |
-        curl -sSL https://install.python-poetry.org | python3 -
-        echo "$HOME/.local/bin" >> $GITHUB_PATH
+      run: pip install poetry
     - name: Configure Poetry
       run: |
         poetry config virtualenvs.create false
@@ -28,7 +26,8 @@ jobs:
     - name: Build a binary wheel and a source tarball using Poetry
       run: poetry build
     - name: Publish distribution to PyPI using Poetry
-      uses: pypa/gh-action-pypi-publish@v1.4.2 # 确保使用最新版
+      uses: pypa/gh-action-pypi-publish@v1.4.2
       with:
         user: __token__
         password: ${{ secrets.PYPI_API_TOKEN }}
+
