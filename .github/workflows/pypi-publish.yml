@@ -7,30 +7,28 @@ on:
   workflow_dispatch:
 
 jobs:
-  pypi-publish:
-    name: Upload release to PyPI
+  poetry-publish:
+    name: Upload release to PyPI using Poetry
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2 # 更新为最新版的 actions/checkout
     - name: Set up Python
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v2 # 更新为最新版的 actions/setup-python
       with:
-        python-version: "3.x"
-    - name: Install pypa/build
-      run: >-
-        python -m
-        pip install
-        build
-        --user
-    - name: Build a binary wheel and a source tarball
-      run: >-
-        python -m
-        build
-        --sdist
-        --wheel
-        --outdir dist/
-        .
-    - name: Publish distribution to PyPI
-      uses: pypa/gh-action-pypi-publish@release/v1
+        python-version: '3.x'
+    - name: Install Poetry
+      run: |
+        curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+        echo "$HOME/.poetry/bin" >> $GITHUB_PATH
+    - name: Configure Poetry
+      run: |
+        poetry config virtualenvs.create false
+    - name: Install dependencies using Poetry
+      run: poetry install
+    - name: Build a binary wheel and a source tarball using Poetry
+      run: poetry build
+    - name: Publish distribution to PyPI using Poetry
+      uses: pypa/gh-action-pypi-publish@v1.4.2 # 确保使用最新版
       with:
+        user: __token__
         password: ${{ secrets.PYPI_API_TOKEN }}
