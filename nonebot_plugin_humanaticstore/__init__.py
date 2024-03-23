@@ -1,5 +1,3 @@
-from pathlib import Path
-
 from nonebot import get_plugin_config, logger
 from nonebot.plugin import PluginMetadata
 
