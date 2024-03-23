@@ -8,6 +8,7 @@ __plugin_meta__ = PluginMetadata(
     description="存储插件数据至nb_cli所在相对路径",
     usage=(
         '声明依赖: `require("nonebot_plugin_humanaticstore")`\n'
+        '实例化对象: ConfigManager(plugin_name)'
         "导入所需文件夹:\n"
         '  `cache_dir = store.get_cache_dir("plugin_name")`\n'
         '  `cache_file = store.get_cache_file("plugin_name", "file_name")`\n'
@@ -17,7 +18,7 @@ __plugin_meta__ = PluginMetadata(
         '  `config_file = store.get_config_file("plugin_name", "file_name")`'
     ),
     type="library",
-    homepage="",
+    homepage="https://github.com/QuanhuZeYu/nonebot-plugin-humanaticstore",
     config=Config,
     supported_adapters=None,
 )

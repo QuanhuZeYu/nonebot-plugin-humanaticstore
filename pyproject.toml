@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "nonebot-plugin-humanaticstore"
+name = "nonebot_plugin_humanaticstore"
 version = "0.1.0"
 description = "一个强大的配置管理工具集"
 authors = ["QuanhuZeyu <1624910218@qq.com>"]
