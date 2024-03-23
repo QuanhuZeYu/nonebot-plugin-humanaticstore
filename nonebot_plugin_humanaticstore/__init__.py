@@ -29,7 +29,6 @@ plugin_config = get_plugin_config(Config)
 config_manager = ConfigManager("nonebot_plugin_humanaticstore")
 config_dir = config_manager.get_config_dir()
 config_data = config_manager.model_dump()
-print(config_data)
 BASE_CACHE_DIR = config_manager.BASE_CACHE_DIR
 BASE_DATA_DIR = config_manager.BASE_DATA_DIR
 BASE_CONFIG_DIR = config_manager.BASE_CONFIG_DIR
