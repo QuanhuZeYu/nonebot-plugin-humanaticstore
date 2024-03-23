@@ -20,7 +20,6 @@ __plugin_meta__ = PluginMetadata(
     type="library",
     homepage="https://github.com/QuanhuZeYu/nonebot-plugin-humanaticstore",
     config=Config,
-    supported_adapters=None,
 )
 
 from .config_manager import ConfigManager
