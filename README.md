@@ -6,9 +6,9 @@
 
 <div align="center">
 
-# nonebot-plugin-template
+# nonebot-plugin-humanaticstore
 
-_✨ NoneBot 插件简单描述 ✨_
+_✨ NoneBot 更易于管理的插件配置工具 ✨_
 
 
 <a href="./LICENSE">
