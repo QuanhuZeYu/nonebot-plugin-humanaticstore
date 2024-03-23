@@ -1,20 +1,54 @@
 [build-system]
-requires = ["setuptools>=42", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
 
-[project]
-name = "你的包名"
-version = "0.1.0"
-description = "包描述"
+[tool.poetry]
+name = "nonebot-plugin-status"
+version = "0.8.1"
+description = "Check your server status (CPU, Memory, Disk Usage) via nonebot"
+license = "MIT"
+authors = ["yanyongyu <yyy@nonebot.dev>"]
 readme = "README.md"
-authors = [{name = "作者名字", email = "作者邮箱"}]
-license = {text = "MIT"}
-keywords = ["关键字1", "关键字2"]
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-]
-dependencies = [
-    "依赖包名>=版本号",
-]
+homepage = "https://github.com/nonebot/plugin-status"
+repository = "https://github.com/nonebot/plugin-status"
+documentation = "https://github.com/nonebot/plugin-status#readme"
+keywords = ["nonebot", "nonebot2", "server", "status"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pyyaml = ">5.4"
+nonebot2 = "^2.2.0"
+pydantic = "^2.0"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.3.0"
+isort = "^5.10.1"
+black = "^24.0.0"
+nonemoji = "^0.1.3"
+pre-commit = "^3.3.0"
+
+[tool.black]
+line-length = 96
+include = '\.pyi?$'
+extend-exclude = '''
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 96
+length_sort = true
+skip_gitignore = true
+force_sort_within_sections = true
+extra_standard_library = ["typing_extensions"]
+
+[tool.ruff]
+line-length = 96
+target-version = "py38"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "UP", "C", "T", "Q"]
+ignore = ["E402", "F403", "F405", "C901", "UP037"]
+
+[tool.pyright]
+pythonPlatform = "All"
+pythonVersion = "3.8"
