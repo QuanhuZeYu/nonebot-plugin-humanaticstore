@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nonebot_plugin_humanaticstore"
-version = "0.1.1"
+version = "0.1.2"
 description = "一个强大的配置管理工具集"
 authors = ["QuanhuZeyu <1624910218@qq.com>"]
 readme = "README.md"
@@ -11,6 +11,7 @@ python = "^3.8"
 pyyaml = "^6.0.1"
 pydantic = "^2.6.4"
 nonebot2 = "^2.2.1"
+typing-extensions = "^4.0.0"
 
 
 [build-system]
