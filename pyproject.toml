@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nonebot_plugin_humanaticstore"
-version = "0.1.2"
+version = "0.1.3"
 description = "一个强大的配置管理工具集"
 authors = ["QuanhuZeyu <1624910218@qq.com>"]
 readme = "README.md"
@@ -17,3 +17,6 @@ typing-extensions = "^4.0.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.plugins.nb_scripts]
+humanstore = "nonebot_plugin_humanaticstore.nb_cli_command:main"

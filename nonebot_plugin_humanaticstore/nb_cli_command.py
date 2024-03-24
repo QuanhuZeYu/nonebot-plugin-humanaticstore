@@ -48,7 +48,7 @@ def clear_data():
 
 """
 以下命令行部分代码逻辑概要
-[顶层节点nb localstore]
+[顶层节点nb humanstore]
 解析器对象: parser
 注册默认方法: show_dir
 注册子解析器对象: subparsers
